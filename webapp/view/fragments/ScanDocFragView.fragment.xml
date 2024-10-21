@@ -2,7 +2,7 @@
 	<Page id="pageDocScan" showHeader="false">
 		<Bar id="barDocScan">
 			<contentLeft>
-				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMV')"/>
+				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMatList')"/>
 			</contentLeft>
 			<contentMiddle>
 				<Title id="titleDocScan" text="{i18n>title}"/>

@@ -4,8 +4,8 @@
 			<NavContainer id="navConMV">
 				<core:Fragment fragmentName="zmwhumng.view.fragments.MainFragView" type="XML"/>
 				<core:Fragment fragmentName="zmwhumng.view.fragments.ScanDocFragView" type="XML"/>
-				<!-- <core:Fragment fragmentName="zwmhupack.view.fragments.DlvItm" type="XML"/>
-				<core:Fragment fragmentName="zwmhupack.view.fragments.Weight" type="XML"/> -->
+				<core:Fragment fragmentName="zmwhumng.view.fragments.MatListFragView" type="XML"/>
+				<!-- <core:Fragment fragmentName="zwmhupack.view.fragments.Weight" type="XML"/> -->
 			</NavContainer>
 		</content>
 	</Page>

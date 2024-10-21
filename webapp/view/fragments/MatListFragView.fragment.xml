@@ -1,0 +1,47 @@
+<core:FragmentDefinition id="fragMatList" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
+	<Page id="pageMatList" showHeader="false">
+		<Bar id="barMatListHdr">
+			<contentMiddle>
+				<Title id="titleMatListHdr" text="{i18n>title}"/>
+			</contentMiddle>
+		</Bar>
+		<List id="listMat" width="100%">
+			<CustomListItem id="listItmMat">
+				<VBox id="vboxMat" width="100%" class="sapUiSmallMargin">
+					<HBox id="hboxMatHdr" width="100%" renderType="Bare">
+						<Label id="lblMatHdr" text="{i18n>lblMatHdr}" width="25%"/>
+						<Label id="lblMatDescHdr" text="{i18n>lblMatDescHdr}" width="30%"/>
+						<Label id="lblMatQtyHdr" text="{i18n>lblMatQtyHdr}" width="25%"/>
+						<Label id="lblMatMoveHdr" width="20%"/>
+					</HBox>
+					<HBox id="hboxMatVal" width="100%" renderType="Bare">
+						<Text id="txtMatVal" text="{i18n>txtMatVal}" width="25%"/>
+						<Text id="txtMatDescVal" text="{i18n>txtMatDescVal}" width="30%"/>
+						<Text id="txtMatQtyVal" text="{i18n>txtMatQtyVal}" width="25%"/>
+						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="20%"/>
+					</HBox>
+					<HBox id="hboxMatHdr1" width="100%" renderType="Bare" class="sapUiTinyMarginTop">
+						<Label id="lblOrd" text="{i18n>lblOrd}" width="25%"/>
+						<Label id="lblPos" text="{i18n>lblPos}" width="30%"/>
+						<Label id="lblList" text="{i18n>lblList}" width="25%"/>
+						<Label id="lblMatMoveHdr1" width="20%"/>
+					</HBox>
+					<HBox id="hboxMatVal1" width="100%" renderType="Bare">
+						<Text id="txtOrdVal" text="{i18n>txtOrdVal}" width="25%"/>
+						<Text id="txtPosVal" text="{i18n>txtPosVal}" width="30%"/>
+						<Text id="txtListVal" text="{i18n>txtListVal}" width="25%"/>
+						<Text id="txtMove" width="20%"/>
+					</HBox>
+				</VBox>
+			</CustomListItem>
+		</List>
+		<footer>
+			<Bar id="barMatListFragFoo">
+				<contentMiddle>
+					<Button id="btnMatListCreateHU" icon="sap-icon://add" text="{i18n>btnCreateHU}" width="100%"/>
+					<Button id="btnMatListMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>

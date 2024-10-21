@@ -11,6 +11,10 @@ sap.ui.define([
             onMVScan: function (oEvent) {
                 var navCon = this.getView().byId("navConMV");
                 navCon.to(this.getView().byId("pageDocScan"));
-            }
+            },
+            onDocScanScan: function (oEvent) {
+                var navCon = this.getView().byId("navConMV");
+                navCon.to(this.getView().byId("pageMatList"));
+            },
         });
     });
