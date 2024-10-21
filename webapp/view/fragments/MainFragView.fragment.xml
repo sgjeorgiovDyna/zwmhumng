@@ -7,15 +7,14 @@
 		</Bar>
 		<VBox id="vbMVScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
 			<Text id="txtMVScan" text="{i18n>txtMVScan}"/>
-			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/PACK_MAT}"/> 
+			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/PACK_MAT}"/>
 		</VBox>
-
-        <footer>
-            <Bar id="barMVFragFoo">
-            <contentMiddle>
-                <Button id="btnCreateHU" icon="sap-icon://add" text="{i18n>btnCreateHU}" width="100%"></Button>
-            </contentMiddle>
-            </Bar>
-        </footer>
+		<footer>
+			<Bar id="barMVFragFoo">
+				<contentMiddle>
+					<Button id="btnCreateHU" icon="sap-icon://add" text="{i18n>btnCreateHU}" width="100%"/>
+				</contentMiddle>
+			</Bar>
+		</footer>
 	</Page>
 </core:FragmentDefinition>
