@@ -1,0 +1,47 @@
+<core:FragmentDefinition id="fragDocScan" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
+	<Page id="pageDocScan" showHeader="false">
+		<Bar id="barDocScan">
+			<contentLeft>
+				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMV')"/>
+			</contentLeft>
+			<contentMiddle>
+				<Title id="titleDocScan" text="{i18n>title}"/>
+			</contentMiddle>
+		</Bar>
+		<VBox id="vbDocScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
+			<Text id="txtDocScan" text="{i18n>txtDocScan}"/>
+			<Input id="inDDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/VBELN}"/>
+		</VBox>
+		<!-- <Table id="tabDocScan" class="sapUiSmallMarginBegin sapUiLargeMarginTop" width="97%" items="{mHUDlv>/}">
+			<columns>
+				<Column id="colDocScanHU">
+					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}"/>
+				</Column>
+				<Column id="colDocScanDlv">
+					<Text id="colTxtDocScanDlv" text="{i18n>colTxtDocScanDlv}"/>
+				</Column>
+				<Column id="colDocScanDesc">
+					<Text id="colTxtDocScanDesc" text="{i18n>colTxtDocScanDesc}"/>
+				</Column>
+				<Column id="colDocScanQty">
+					<Text id="colTxtDocScanQty" text="{i18n>colTxtDocScanQty}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colListItmDocScan">
+					<Text id="txtDocScanHU" text="{mHUDlv>EXIDV}"/>
+					<Text id="txtDocScanDlv" text="{mHUDlv>VBELN}"/>
+					<Text id="txtDocScanDesc" text="{mHUDlv>VTEXT}"/>
+				</ColumnListItem>
+			</items>
+		</Table> -->
+		<footer>
+			<Bar id="barDocScanFoo">
+				<contentMiddle>
+					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views"/>
+                    <Button id="btnDocScanMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>
