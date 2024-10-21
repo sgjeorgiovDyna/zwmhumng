@@ -1,7 +1,12 @@
-<mvc:View controllerName="zmwhumng.controller.HUMainView"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+<mvc:View controllerName="zmwhumng.controller.HUMainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="page" showHeader="false">
+		<content>
+			<NavContainer id="navConMV">
+				<core:Fragment fragmentName="zmwhumng.view.fragments.MainFragView" type="XML"/>
+				<!-- <core:Fragment fragmentName="zwmhupack.view.fragments.HUView" type="XML"/>
+				<core:Fragment fragmentName="zwmhupack.view.fragments.DlvItm" type="XML"/>
+				<core:Fragment fragmentName="zwmhupack.view.fragments.Weight" type="XML"/> -->
+			</NavContainer>
+		</content>
+	</Page>
 </mvc:View>

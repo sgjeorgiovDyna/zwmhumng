@@ -1,0 +1,21 @@
+<core:FragmentDefinition id="fragPageMV" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
+	<Page id="pageMV" showHeader="false">
+		<Bar id="barMVHdr">
+			<contentMiddle>
+				<Title id="titleMVHdr" text="{i18n>title}"/>
+			</contentMiddle>
+		</Bar>
+		<VBox id="vbMVScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
+			<Text id="txtMVScan" text="{i18n>txtMVScan}"/>
+			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/PACK_MAT}"/> 
+		</VBox>
+
+        <footer>
+            <Bar id="barMVFragFoo">
+            <contentMiddle>
+                <Button id="btnCreateHU" icon="sap-icon://add" text="{i18n>btnCreateHU}" width="100%"></Button>
+            </contentMiddle>
+            </Bar>
+        </footer>
+	</Page>
+</core:FragmentDefinition>
