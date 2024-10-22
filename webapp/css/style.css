@@ -1,1 +1,82 @@
 /* Enter your custom styles here */
+
+/* Global */
+.page section{
+    background: white !important;
+}
+
+.barHdr {
+    background: #093C70;
+}
+
+.title{
+    font: Inter !important;
+    font-weight: 400 !important;
+    font-size: 14px  !important;
+    color: #FFFFFF;
+}
+
+.btnNavBack span>span{
+    color: white !important;
+}
+
+.btnFoo span{
+    border-color: #093C70 !important;
+}
+
+.lblInputSearch{
+    font: Inter !important;
+    font-weight: 500 !important;
+    font-size: 20px  !important;
+    color:#000000  !important;
+}
+
+.txtTabColumn {
+    font: Inter !important;
+    font-weight: 400 !important;
+    font-size: 12px  !important;
+    color:#A0AEC0  !important;
+}
+
+.txtTabColumnVal {
+    font: Inter !important;
+    font-weight: 500 !important;
+    font-size: 14px  !important;
+    color:#093C70  !important;
+}
+
+/* Material List */
+.txtList{
+    font: Inter;
+    font-weight: 700;
+    font-size: 24px;
+    color: #093C70;
+}
+
+.lblMatListHdr {
+    font: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    color: #A0AEC0;
+}
+
+.txtMatListHdr {
+    font: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2D3748;
+}
+
+.lblListMatDesc {
+    font: Inter !important;
+    font-weight: 400 !important;
+    font-size: 12px  !important;
+    color:#A0AEC0  !important;
+}
+
+.txtListMatVal {
+    font: Inter !important;
+    font-weight: 600 !important;
+    font-size: 14px  !important;
+    color:#2D3748  !important;
+}

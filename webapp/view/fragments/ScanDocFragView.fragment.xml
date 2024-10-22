@@ -1,45 +1,45 @@
 <core:FragmentDefinition id="fragDocScan" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
-	<Page id="pageDocScan" showHeader="false">
-		<Bar id="barDocScan">
+	<Page id="pageDocScan" showHeader="false" class="page">
+		<Bar id="barDocScan" class="barHdr">
 			<contentLeft>
-				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMV')"/>
+				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMV')" class="btnNavBack"/>
 			</contentLeft>
 			<contentMiddle>
-				<Title id="titleDocScan" text="{i18n>title}"/>
+				<Text id="titleDocScan" text="{i18n>title}" class="title"/>
 			</contentMiddle>
 		</Bar>
 		<VBox id="vbDocScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
-			<Text id="txtDocScan" text="{i18n>txtDocScan}"/>
+			<Text id="txtDocScan" text="{i18n>txtDocScan}" class="lblInputSearch"/>
 			<Input id="inDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/DOCNO}"/>
 		</VBox>
 		 <Table id="tabDocScan" class="sapUiLargeMarginTop" width="100%" items="{mHUDoc>/}">
 			<columns>
 				<Column id="colDocScanHU">
-					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}"/>
+					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}" class="txtTabColumn"/>
 				</Column>
 				<Column id="colDocScanDlv">
-					<Text id="colTxtDocScanDoc" text="{i18n>colTxtDocScanDoc}"/>
+					<Text id="colTxtDocScanDoc" text="{i18n>colTxtDocScanDoc}" class="txtTabColumn"/>
 				</Column>
 				<Column id="colDocScanDesc">
-					<Text id="colTxtDocScanDesc" text="{i18n>colTxtDocScanDesc}"/>
+					<Text id="colTxtDocScanDesc" text="{i18n>colTxtDocScanDesc}" class="txtTabColumn"/>
 				</Column>
 				<Column id="colDocScanQty">
-					<Text id="colTxtDocScanQty" text="{i18n>colTxtDocScanQty}"/>
+					<Text id="colTxtDocScanQty" text="{i18n>colTxtDocScanQty}" class="txtTabColumn"/>
 				</Column>
 			</columns>
 			<items>
 				<ColumnListItem id="colListItmDocScan">
-					<Text id="txtDocScanHU" text="{mHUDoc>EXIDV}"/>
-					<Text id="txtDocScanDlv" text="{mHUDoc>VBELN}"/>
-					<Text id="txtDocScanDesc" text="{mHUDoc>VTEXT}"/>
-					<Text id="txtDocScanQty" text="{mHUDoc>KWMENG} {mHUDoc>MEINS}"/>
+					<Text id="txtDocScanHU" text="{mHUDoc>EXIDV}" class="txtTabColumnVal"/>
+					<Text id="txtDocScanDlv" text="{mHUDoc>VBELN}" class="txtTabColumnVal"/>
+					<Text id="txtDocScanDesc" text="{mHUDoc>VTEXT}" class="txtTabColumnVal"/>
+					<Text id="txtDocScanQty" text="{mHUDoc>KWMENG} {mHUDoc>MEINS}" class="txtTabColumnVal"/>
 				</ColumnListItem>
 			</items>
 		</Table>
 		<footer>
 			<Bar id="barDocScanFoo">
 				<contentMiddle>
-					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views"/>
+					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views" class="btnFoo"/>
                     <Button id="btnDocScanMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
 				</contentMiddle>
 			</Bar>
