@@ -1,6 +1,9 @@
 <core:FragmentDefinition id="fragMatList" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
 	<Page id="pageMatList" showHeader="false">
 		<Bar id="barMatListHdr">
+			<contentLeft>
+				<Button id="btnNavToScanDoc" icon="sap-icon://paging" press="onNavTo($event ,'pageDocScan')"/>
+			</contentLeft>
 			<contentMiddle>
 				<Title id="titleMatListHdr" text="{i18n>title}"/>
 			</contentMiddle>
@@ -8,22 +11,22 @@
 		<HBox id="hboxList" width="100%" class="sapUiSmallMargin">
 			<HBox id="hboxListNo" width="40%" alignItems="Center">
 				<Label id="lblListNo" text="{i18n>lblListNo}" class="sapUiTinyMarginEnd"/>
-				<Text id="txtListNo" text="{i18n>txtListNo}"/>
+				<Text id="txtListNo" text="{mHUSett>/LISTNO}"/>
 			</HBox>
 			<HBox id="hboxFrom" width="30%">
 				<VBox id="vboxFrom">
 					<Label id="lblFrom" text="{i18n>lblFrom}"/>
-					<Text id="txtFrom" text="{i18n>txtFrom}"/>
+					<Text id="txtFrom" text="{mHUSett>/FROM}"/>
 				</VBox>
 			</HBox>
 			<HBox id="hboxDest" width="30%">
 				<VBox id="vboxDest">
 					<Label id="lblDest" text="{i18n>lblDest}"/>
-					<Text id="txtDest" text="{i18n>txtDest}"/>
+					<Text id="txtDest" text="{mHUSett>/DEST}"/>
 				</VBox>
 			</HBox>
 		</HBox>
-		<Table id="tabListDocScan" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="100%" items="{mHUDlv>/}">
+		<Table id="tabListDocScan" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="100%" items="{mHUDoc>/}">
 			<columns>
 				<Column id="colListDocScanHU">
 					<Text id="colTxtListDocScanHU" text="{i18n>colTxtDocScanHU}"/>
@@ -40,10 +43,10 @@
 			</columns>
 			<items>
 				<ColumnListItem id="colListItmListDocScan">
-					<Text id="txtListDocScanU" text="{mHUDlv>EXIDV}"/>
-					<Text id="txtListDocScanDlv" text="{mHUDlv>VBELN}"/>
-					<Text id="txtListDocScanDesc" text="{mHUDlv>VTEXT}"/>
-					<Text id="txtListDocScanQty" text="{mHUDlv>VTEXT}"/>
+					<Text id="txtListDocScanU" text="{mHUDoc>EXIDV}"/>
+					<Text id="txtListDocScanDlv" text="{mHUDoc>VBELN}"/>
+					<Text id="txtListDocScanDesc" text="{mHUDoc>VTEXT}"/>
+					<Text id="txtListDocScanQty" text="{mHUDoc>KWMENG} {mHUDoc>MEINS}"/>
 				</ColumnListItem>
 			</items>
 		</Table>
@@ -51,15 +54,16 @@
 			<Label id="lblMatSearch" text="{i18n>lblMatHdr}"/>
 			<Input id="inMatSearch"/>
 		</VBox>
-		<List id="listMat" width="100%" mode="MultiSelect">
+		<List id="listMat" width="100%" mode="MultiSelect" items="{mMatList>/}" selectionChange="onItmSel">
 			<headerToolbar>
 				<Toolbar id="toolbarListMat">
 					<Text id="txtListMat" text="{i18n>txtListMat}"/>
 					<ToolbarSpacer id="tbsListMat"/>
-					<Button id="btnSelAll" icon="sap-icon://multiselect-all" type="Neutral"/>
+					<CheckBox id="cbSelAll" text="Select/Deselect" selected="{mHUSett>/SELALL}" select="onSelAll"></CheckBox>
+					<!-- <Button id="btnSelAll" icon="sap-icon://multiselect-all" type="Neutral"/> -->
 				</Toolbar>
 			</headerToolbar>
-			<CustomListItem id="listItmMat">
+			<CustomListItem id="listItmMat" selected="{mMatList>SEL}">
 				<VBox id="vboxMat" width="100%" class="sapUiSmallMargin">
 					<HBox id="hboxMatHdr" width="100%" renderType="Bare">
 						<Label id="lblMatHdr" text="{i18n>lblMatHdr}" width="25%"/>
@@ -68,9 +72,9 @@
 						<Label id="lblMatMoveHdr" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatVal" width="100%" renderType="Bare">
-						<Text id="txtMatVal" text="{i18n>txtMatVal}" width="25%"/>
-						<Text id="txtMatDescVal" text="{i18n>txtMatDescVal}" width="35%"/>
-						<Text id="txtMatQtyVal" text="{i18n>txtMatQtyVal}" width="25%"/>
+						<Text id="txtMatVal" text="{mMatList>MATNR}" width="25%"/>
+						<Text id="txtMatDescVal" text="{mMatList>MAKTX}" width="35%"/>
+						<Text id="txtMatQtyVal" text="{mMatList>KWMENG} {mMatList>/MEINS}" width="25%"/>
 						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatHdr1" width="100%" renderType="Bare" class="sapUiTinyMarginTop">
@@ -80,9 +84,9 @@
 						<Label id="lblMatMoveHdr1" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatVal1" width="100%" renderType="Bare">
-						<Text id="txtOrdVal" text="{i18n>txtOrdVal}" width="25%"/>
-						<Text id="txtPosVal" text="{i18n>txtPosVal}" width="35%"/>
-						<Text id="txtListVal" text="{i18n>txtListVal}" width="25%"/>
+						<Text id="txtOrdVal" text="{mMatList>VBELN}" width="25%"/>
+						<Text id="txtPosVal" text="{mMatList>POSNR}" width="35%"/>
+						<Text id="txtListVal" text="{mMatList>LIST}" width="25%"/>
 						<Text id="txtMove" width="10%"/>
 					</HBox>
 				</VBox>

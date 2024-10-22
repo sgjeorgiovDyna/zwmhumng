@@ -7,7 +7,7 @@
 		</Bar>
 		<VBox id="vbMVScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
 			<Text id="txtMVScan" text="{i18n>txtMVScan}"/>
-			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/PACK_MAT}"/>
+			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/EXIDV}"/>
 		</VBox>
 		<footer>
 			<Bar id="barMVFragFoo">

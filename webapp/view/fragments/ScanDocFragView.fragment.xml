@@ -2,7 +2,7 @@
 	<Page id="pageDocScan" showHeader="false">
 		<Bar id="barDocScan">
 			<contentLeft>
-				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMatList')"/>
+				<Button id="btnNavToMV" icon="sap-icon://paging" press="onNavTo($event ,'pageMV')"/>
 			</contentLeft>
 			<contentMiddle>
 				<Title id="titleDocScan" text="{i18n>title}"/>
@@ -10,9 +10,9 @@
 		</Bar>
 		<VBox id="vbDocScan" class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
 			<Text id="txtDocScan" text="{i18n>txtDocScan}"/>
-			<Input id="inDDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/VBELN}"/>
+			<Input id="inDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/DOCNO}"/>
 		</VBox>
-		 <Table id="tabDocScan" class="sapUiSmallMarginBegin sapUiLargeMarginTop" width="97%" items="{mHUDlv>/}">
+		 <Table id="tabDocScan" class="sapUiLargeMarginTop" width="100%" items="{mHUDoc>/}">
 			<columns>
 				<Column id="colDocScanHU">
 					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}"/>
@@ -29,10 +29,10 @@
 			</columns>
 			<items>
 				<ColumnListItem id="colListItmDocScan">
-					<Text id="txtDocScanHU" text="{mHUDlv>EXIDV}"/>
-					<Text id="txtDocScanDlv" text="{mHUDlv>VBELN}"/>
-					<Text id="txtDocScanDesc" text="{mHUDlv>VTEXT}"/>
-					<Text id="txtDocScanQty" text="{mHUDlv>VTEXT}"/>
+					<Text id="txtDocScanHU" text="{mHUDoc>EXIDV}"/>
+					<Text id="txtDocScanDlv" text="{mHUDoc>VBELN}"/>
+					<Text id="txtDocScanDesc" text="{mHUDoc>VTEXT}"/>
+					<Text id="txtDocScanQty" text="{mHUDoc>KWMENG} {mHUDoc>MEINS}"/>
 				</ColumnListItem>
 			</items>
 		</Table>
