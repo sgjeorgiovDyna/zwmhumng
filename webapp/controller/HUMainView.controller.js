@@ -144,7 +144,7 @@ sap.ui.define([
 
                 vbox.addItem(oMsgStrip);
             },
-            destroyMsgStrip: function(vbox){
+            destroyMsgStrip: function (vbox) {
                 let vboxItm = vbox.getItems();
                 if (vboxItm.length > 0) vboxItm[0].destroy();
             }
