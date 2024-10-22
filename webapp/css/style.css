@@ -24,6 +24,11 @@
     border-color: #093C70 !important;
 }
 
+.msgStrip {
+    position: fixed !important;
+    bottom: calc(100% - 770px) !important;
+}
+
 .lblInputSearch{
     font: Inter !important;
     font-weight: 500 !important;

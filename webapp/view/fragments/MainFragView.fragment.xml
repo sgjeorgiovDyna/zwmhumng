@@ -9,6 +9,7 @@
 			<Text id="txtMVScan" text="{i18n>txtMVScan}" class="lblInputSearch"/>
 			<Input id="inMVScan" width="100%" class="sapUiTinyMarginTop" submit="onMVScan" value="{mHUSett>/EXIDV}"/>
 		</VBox>
+		<VBox id="vbMsgStrip" class="msgStrip" renderType="Bare" width="100%"></VBox>
 		<footer>
 			<Bar id="barMVFragFoo">
 				<contentMiddle>

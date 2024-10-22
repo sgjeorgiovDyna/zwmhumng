@@ -1,9 +1,10 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
+    "sap/m/MessageStrip"
 ],
-    function (Controller, JSONModel, MessageToast) {
+    function (Controller, JSONModel, MessageToast, MessageStrip) {
         "use strict";
 
         return Controller.extend("zmwhumng.controller.HUMainView", {
@@ -14,7 +15,8 @@ sap.ui.define([
             onMVScan: function (oEvent) {
                 let returnMsg = this.checkScannedHU();
                 if (returnMsg) {
-                    MessageToast.show(returnMsg);
+                    let vbox = this.getView().byId("vbMsgStrip");
+                    this.newMsgStrip(returnMsg, vbox, "msgStrip");
                     return;
                 }
 
@@ -29,7 +31,8 @@ sap.ui.define([
             onDocScanScan: function (oEvent) {
                 let returnMsg = this.checkScannedDoc();
                 if (returnMsg) {
-                    MessageToast.show(returnMsg);
+                    let vbox = this.getView().byId("vbScanDocMsgStrip");
+                    this.newMsgStrip(returnMsg, vbox, "msgSDStrip");
                     return;
                 }
 
@@ -63,6 +66,11 @@ sap.ui.define([
             onNavTo: function (oEvent, to) {
                 var navCon = this.getView().byId("navConMV");
                 navCon.to(this.getView().byId(to));
+
+                let vbox = this.getView().byId("vbMsgStrip");
+                this.destroyMsgStrip(vbox);
+                vbox = this.getView().byId("vbScanDocMsgStrip");
+                this.destroyMsgStrip(vbox);
             },
             checkScannedHU: function () {
                 let msg = "";
@@ -116,6 +124,29 @@ sap.ui.define([
                     (isNoSel) ? oData.SELALL = false : oData.SELALL = true;
                 }
                 oModel.refresh();
+            },
+            newMsgStrip: function (txt, vbox, name) {
+                //let vbox = this.getView().byId("vbMsgStrip")
+                let vboxItm = vbox.getItems();
+
+                if (vboxItm.length > 0) {
+                    vboxItm[0].destroy();
+                    vbox.removeAllItems();
+                }
+
+
+                let oMsgStrip = new MessageStrip(name, {
+                    text: txt,
+                    showCloseButton: false,
+                    showIcon: true,
+                    type: 'Information'
+                });
+
+                vbox.addItem(oMsgStrip);
+            },
+            destroyMsgStrip: function(vbox){
+                let vboxItm = vbox.getItems();
+                if (vboxItm.length > 0) vboxItm[0].destroy();
             }
         });
     });

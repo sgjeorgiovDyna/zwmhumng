@@ -36,6 +36,7 @@
 				</ColumnListItem>
 			</items>
 		</Table>
+		<VBox id="vbScanDocMsgStrip" class="msgStrip" renderType="Bare" width="100%"></VBox>
 		<footer>
 			<Bar id="barDocScanFoo">
 				<contentMiddle>
