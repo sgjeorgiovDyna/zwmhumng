@@ -5,32 +5,85 @@
 				<Title id="titleMatListHdr" text="{i18n>title}"/>
 			</contentMiddle>
 		</Bar>
-		<List id="listMat" width="100%">
+		<HBox id="hboxList" width="100%" class="sapUiSmallMargin">
+			<HBox id="hboxListNo" width="40%" alignItems="Center">
+				<Label id="lblListNo" text="{i18n>lblListNo}" class="sapUiTinyMarginEnd"/>
+				<Text id="txtListNo" text="{i18n>txtListNo}"/>
+			</HBox>
+			<HBox id="hboxFrom" width="30%">
+				<VBox id="vboxFrom">
+					<Label id="lblFrom" text="{i18n>lblFrom}"/>
+					<Text id="txtFrom" text="{i18n>txtFrom}"/>
+				</VBox>
+			</HBox>
+			<HBox id="hboxDest" width="30%">
+				<VBox id="vboxDest">
+					<Label id="lblDest" text="{i18n>lblDest}"/>
+					<Text id="txtDest" text="{i18n>txtDest}"/>
+				</VBox>
+			</HBox>
+		</HBox>
+		<Table id="tabListDocScan" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="100%" items="{mHUDlv>/}">
+			<columns>
+				<Column id="colListDocScanHU">
+					<Text id="colTxtListDocScanHU" text="{i18n>colTxtDocScanHU}"/>
+				</Column>
+				<Column id="colListDocScanDlv">
+					<Text id="colTxtListDocScanDoc" text="{i18n>colTxtDocScanDoc}"/>
+				</Column>
+				<Column id="colListDocScanDesc">
+					<Text id="colTxtListDocScanDesc" text="{i18n>colTxtDocScanDesc}"/>
+				</Column>
+				<Column id="colListDocScanQty">
+					<Text id="colTxtListDocScanQty" text="{i18n>colTxtDocScanQty}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colListItmListDocScan">
+					<Text id="txtListDocScanU" text="{mHUDlv>EXIDV}"/>
+					<Text id="txtListDocScanDlv" text="{mHUDlv>VBELN}"/>
+					<Text id="txtListDocScanDesc" text="{mHUDlv>VTEXT}"/>
+					<Text id="txtListDocScanQty" text="{mHUDlv>VTEXT}"/>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<VBox id="vboxMatSearch" width="93%" class="sapUiSmallMargin">
+			<Label id="lblMatSearch" text="{i18n>lblMatHdr}"/>
+			<Input id="inMatSearch"/>
+		</VBox>
+		<List id="listMat" width="100%" mode="MultiSelect">
+			<headerToolbar>
+				<Toolbar id="toolbarListMat">
+					<Text id="txtListMat" text="{i18n>txtListMat}"/>
+					<ToolbarSpacer id="tbsListMat"/>
+					<Button id="btnSelAll" icon="sap-icon://multiselect-all" type="Neutral"/>
+				</Toolbar>
+			</headerToolbar>
 			<CustomListItem id="listItmMat">
 				<VBox id="vboxMat" width="100%" class="sapUiSmallMargin">
 					<HBox id="hboxMatHdr" width="100%" renderType="Bare">
 						<Label id="lblMatHdr" text="{i18n>lblMatHdr}" width="25%"/>
-						<Label id="lblMatDescHdr" text="{i18n>lblMatDescHdr}" width="30%"/>
+						<Label id="lblMatDescHdr" text="{i18n>lblMatDescHdr}" width="35%"/>
 						<Label id="lblMatQtyHdr" text="{i18n>lblMatQtyHdr}" width="25%"/>
-						<Label id="lblMatMoveHdr" width="20%"/>
+						<Label id="lblMatMoveHdr" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatVal" width="100%" renderType="Bare">
 						<Text id="txtMatVal" text="{i18n>txtMatVal}" width="25%"/>
-						<Text id="txtMatDescVal" text="{i18n>txtMatDescVal}" width="30%"/>
+						<Text id="txtMatDescVal" text="{i18n>txtMatDescVal}" width="35%"/>
 						<Text id="txtMatQtyVal" text="{i18n>txtMatQtyVal}" width="25%"/>
-						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="20%"/>
+						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatHdr1" width="100%" renderType="Bare" class="sapUiTinyMarginTop">
 						<Label id="lblOrd" text="{i18n>lblOrd}" width="25%"/>
-						<Label id="lblPos" text="{i18n>lblPos}" width="30%"/>
+						<Label id="lblPos" text="{i18n>lblPos}" width="35%"/>
 						<Label id="lblList" text="{i18n>lblList}" width="25%"/>
-						<Label id="lblMatMoveHdr1" width="20%"/>
+						<Label id="lblMatMoveHdr1" width="10%"/>
 					</HBox>
 					<HBox id="hboxMatVal1" width="100%" renderType="Bare">
 						<Text id="txtOrdVal" text="{i18n>txtOrdVal}" width="25%"/>
-						<Text id="txtPosVal" text="{i18n>txtPosVal}" width="30%"/>
+						<Text id="txtPosVal" text="{i18n>txtPosVal}" width="35%"/>
 						<Text id="txtListVal" text="{i18n>txtListVal}" width="25%"/>
-						<Text id="txtMove" width="20%"/>
+						<Text id="txtMove" width="10%"/>
 					</HBox>
 				</VBox>
 			</CustomListItem>

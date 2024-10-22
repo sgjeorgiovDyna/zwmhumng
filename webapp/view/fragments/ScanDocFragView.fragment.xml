@@ -12,13 +12,13 @@
 			<Text id="txtDocScan" text="{i18n>txtDocScan}"/>
 			<Input id="inDDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/VBELN}"/>
 		</VBox>
-		<!-- <Table id="tabDocScan" class="sapUiSmallMarginBegin sapUiLargeMarginTop" width="97%" items="{mHUDlv>/}">
+		 <Table id="tabDocScan" class="sapUiSmallMarginBegin sapUiLargeMarginTop" width="97%" items="{mHUDlv>/}">
 			<columns>
 				<Column id="colDocScanHU">
 					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}"/>
 				</Column>
 				<Column id="colDocScanDlv">
-					<Text id="colTxtDocScanDlv" text="{i18n>colTxtDocScanDlv}"/>
+					<Text id="colTxtDocScanDoc" text="{i18n>colTxtDocScanDoc}"/>
 				</Column>
 				<Column id="colDocScanDesc">
 					<Text id="colTxtDocScanDesc" text="{i18n>colTxtDocScanDesc}"/>
@@ -32,9 +32,10 @@
 					<Text id="txtDocScanHU" text="{mHUDlv>EXIDV}"/>
 					<Text id="txtDocScanDlv" text="{mHUDlv>VBELN}"/>
 					<Text id="txtDocScanDesc" text="{mHUDlv>VTEXT}"/>
+					<Text id="txtDocScanQty" text="{mHUDlv>VTEXT}"/>
 				</ColumnListItem>
 			</items>
-		</Table> -->
+		</Table>
 		<footer>
 			<Bar id="barDocScanFoo">
 				<contentMiddle>
