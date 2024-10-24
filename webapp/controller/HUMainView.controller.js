@@ -9,7 +9,7 @@ sap.ui.define([
 
         return Controller.extend("zmwhumng.controller.HUMainView", {
             onInit: function () {
-                this.setViewModel(new this.newSett(), 'mHUSett');
+                this.loadMockData("mockdata/sett.json", "mHUSett");
                 this.getView().byId("inMVScan").focus();
             },
             onMVScan: function (oEvent) {
@@ -42,14 +42,6 @@ sap.ui.define([
                 setTimeout(function () {
                     this.getView().byId("inMatSearch").focus();
                 }.bind(this), 500);
-            },
-            newSett: function () {
-                this.EXIDV = '';
-                this.DOCNO = '';
-                this.LISTNO = '8104926';
-                this.FROM = 'MAM1';
-                this.DEST = 'CMA1';
-                this.SELALL = false;
             },
             setViewModel: function (mData, mName) {
                 let oModel = new JSONModel();
