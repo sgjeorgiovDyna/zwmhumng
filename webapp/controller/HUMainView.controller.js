@@ -199,5 +199,11 @@ sap.ui.define([
                     diaObj.close();
                 }
             },
+            onLiveSearchMatList: function (evt) {
+                let val = evt.getParameter("newValue");
+                let binding = this.getView().byId("listMat").getBinding("items");
+                var filter = new sap.ui.model.Filter("SEARCH", "Contains", val);
+                binding.filter([filter]);
+            },
         });
     });

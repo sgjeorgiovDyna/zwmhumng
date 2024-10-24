@@ -54,7 +54,7 @@
 		</Table>
 		<VBox id="vboxMatSearch" width="93%" class="sapUiSmallMargin">
 			<Label id="lblMatSearch" text="{i18n>lblMatHdr}" class="txtTabColumn"/>
-			<Input id="inMatSearch"/>
+			<Input id="inMatSearch" liveChange="onLiveSearchMatList"/>
 		</VBox>
 		<List id="listMat" width="100%" mode="MultiSelect" items="{mMatList>/}" selectionChange="onItmSel">
 			<headerToolbar>
