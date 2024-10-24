@@ -62,7 +62,6 @@
 					<Text id="txtListMat" text="{i18n>txtListMat}"/>
 					<ToolbarSpacer id="tbsListMat"/>
 					<CheckBox id="cbSelAll" text="Select/Deselect" selected="{mHUSett>/SELALL}" select="onSelAll"></CheckBox>
-					<!-- <Button id="btnSelAll" icon="sap-icon://multiselect-all" type="Neutral"/> -->
 				</Toolbar>
 			</headerToolbar>
 			<CustomListItem id="listItmMat" selected="{mMatList>SEL}">

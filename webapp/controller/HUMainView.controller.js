@@ -173,6 +173,7 @@ sap.ui.define([
                 let btn = new Button({
                     text: this.getView().getModel("i18n").getResourceBundle().getText("btnCancelDia"),
                     width: "47%",
+                    icon: "sap-icon://action-settings",
                     press: function () {
                         this.handleCloseDia(dia);
                     }.bind(this)
@@ -186,6 +187,7 @@ sap.ui.define([
                     text: this.getView().getModel("i18n").getResourceBundle().getText("btnSaveDia"),
                     width: "48%",
                     type: "Emphasized",
+                    icon: "sap-icon://save",
                     press: function () {
                         this.handleCloseDia(dia);
                     }.bind(this)
