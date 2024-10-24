@@ -26,7 +26,7 @@
 
 .msgStrip {
     position: fixed !important;
-    bottom: calc(100% - 770px) !important;
+    bottom: calc(100% - 670px) !important;
 }
 
 .lblInputSearch{
