@@ -65,7 +65,7 @@
 				</Toolbar>
 			</headerToolbar>
 			<CustomListItem id="listItmMat" selected="{mMatList>SEL}">
-				<VBox id="vboxMat" width="100%" class="sapUiSmallMargin">
+				<VBox id="vboxMat" width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiSmallMarginRight">
 					<HBox id="hboxMatHdr" width="100%" renderType="Bare">
 						<Label id="lblMatHdr" text="{i18n>lblMatHdr}" width="25%" class="lblListMatDesc"/>
 						<Label id="lblMatDescHdr" text="{i18n>lblMatDescHdr}" width="35%" class="lblListMatDesc"/>
@@ -96,7 +96,7 @@
 		<footer>
 			<Bar id="barMatListFragFoo">
 				<contentMiddle>
-					<Button id="btnMatListCreateHU" icon="sap-icon://add" text="{i18n>btnCreateHU}" width="100%" class="btnFoo"/>
+					<Button id="btnMatListCreateHU" icon="sap-icon://switch-views" text="{i18n>btnDocScanCng}" width="100%" class="btnFoo" press="onBackToMV"/>
 					<Button id="btnMatListMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
 				</contentMiddle>
 			</Bar>

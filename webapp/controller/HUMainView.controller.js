@@ -13,6 +13,16 @@ sap.ui.define([
             onInit: function () {
                 this.loadMockData("mockdata/sett.json", "mHUSett");
                 this.getView().byId("inMVScan").focus();
+
+                $(window).keydown(function (event) {
+                    let currPage = this.getCurrentPage();
+                    if (currPage === 'pageDocScan' || currPage === 'pageMatList') {
+                        if (event.keyCode == 117) { //f6 keycode
+                            this.onBackToMV(event);
+                            event.preventDefault();
+                        }
+                    }
+                }.bind(this));
             },
             onMVScan: function (oEvent) {
                 let returnMsg = this.checkScannedHU();
@@ -128,7 +138,6 @@ sap.ui.define([
                     vbox.removeAllItems();
                 }
 
-
                 let oMsgStrip = new MessageStrip(name, {
                     text: txt,
                     showCloseButton: false,
@@ -207,5 +216,28 @@ sap.ui.define([
                 var filter = new sap.ui.model.Filter("SEARCH", "Contains", val);
                 binding.filter([filter]);
             },
+            onBackToMV: function (oEvent) {
+                let navCon = this.getView().byId("navConMV");
+                let vbox = this.getView().byId("vbMsgStrip");
+                let oModel = this.getView().getModel("mHUSett");
+                let oData = oModel.getData();
+
+                oData.EXIDV = "";
+                oData.DOCNO = "";
+                oModel.refresh();
+                setTimeout(function () {
+                    this.getView().byId("inMVScan").focus();
+                }.bind(this), 500);
+
+                this.destroyMsgStrip(vbox);
+                navCon.to(this.getView().byId("pageMV"));
+            },
+            getCurrentPage: function () {
+                let currPage = this.getView().byId("navConMV").getCurrentPage();
+                let pageIds = currPage.sId.split("-");
+                let length = pageIds.length;
+
+                return pageIds[length - 1];
+            }
         });
     });

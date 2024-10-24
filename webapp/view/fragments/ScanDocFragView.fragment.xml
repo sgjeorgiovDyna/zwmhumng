@@ -14,11 +14,29 @@
 			<Text id="txtDocScan" text="{i18n>txtDocScan}" class="lblInputSearch"/>
 			<Input id="inDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/DOCNO}"/>
 		</VBox>
+		<HBox id="hboxHUData" width="100%" class="sapUiSmallMargin">
+			<HBox id="hboxHUDataNo" width="40%" alignItems="Center">
+				<Label id="lblHUDataNo" text="{i18n>colTxtDocScanHU}" class="sapUiTinyMarginEnd lblMatListHdr"/>
+				<Text id="txtHUDataNo" text="{mHUSett>/EXIDV}" class="txtList"/>
+			</HBox>
+			<HBox id="hboxHUDataFrom" width="30%">
+				<VBox id="vboxHUDataFrom">
+					<Label id="lblHUDataFrom" text="{i18n>lblFrom}" class="lblMatListHdr"/>
+					<Text id="txtHUDataFrom" text="{mHUSett>/FROM}" class="txtMatListHdr"/>
+				</VBox>
+			</HBox>
+			<HBox id="hboxHUDataDest" width="30%">
+				<VBox id="vboxHUDataDest">
+					<Label id="lblHUDataDest" text="{i18n>lblDest}" class="lblMatListHdr"/>
+					<Text id="txtHUDataDest" text="{mHUSett>/DEST}" class="txtMatListHdr"/>
+				</VBox>
+			</HBox>
+		</HBox>
 		<Table id="tabDocScan" class="sapUiLargeMarginTop" width="100%" items="{mHUDoc>/}">
 			<columns>
-				<Column id="colDocScanHU">
+				<!-- <Column id="colDocScanHU">
 					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}" class="txtTabColumn"/>
-				</Column>
+				</Column> -->
 				<Column id="colDocScanDlv">
 					<Text id="colTxtDocScanDoc" text="{i18n>colTxtDocScanDoc}" class="txtTabColumn"/>
 				</Column>
@@ -31,7 +49,7 @@
 			</columns>
 			<items>
 				<ColumnListItem id="colListItmDocScan">
-					<Text id="txtDocScanHU" text="{mHUDoc>EXIDV}" class="txtTabColumnVal"/>
+					<!-- <Text id="txtDocScanHU" text="{mHUDoc>EXIDV}" class="txtTabColumnVal"/> -->
 					<Text id="txtDocScanDlv" text="{mHUDoc>VBELN}" class="txtTabColumnVal"/>
 					<Text id="txtDocScanDesc" text="{mHUDoc>VTEXT}" class="txtTabColumnVal"/>
 					<Text id="txtDocScanQty" text="{mHUDoc>KWMENG} {mHUDoc>MEINS}" class="txtTabColumnVal"/>
@@ -42,7 +60,7 @@
 		<footer>
 			<Bar id="barDocScanFoo">
 				<contentMiddle>
-					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views" class="btnFoo"/>
+					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views" class="btnFoo" press="onBackFromScanDoc"/>
 					<Button id="btnDocScanMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
 				</contentMiddle>
 			</Bar>
