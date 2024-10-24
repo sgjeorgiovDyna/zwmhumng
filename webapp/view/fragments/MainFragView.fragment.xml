@@ -1,4 +1,6 @@
-<core:FragmentDefinition id="fragPageMV" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
+<core:FragmentDefinition id="fragPageMV"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
 	<Page id="pageMV" showHeader="false" class="page">
 		<Bar id="barMVHdr" class="barHdr">
 			<contentMiddle>

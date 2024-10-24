@@ -1,4 +1,6 @@
-<core:FragmentDefinition id="fragDocScan" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
+<core:FragmentDefinition id="fragDocScan"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m" controllerName="zmwhumng.controller.HUMainView">
 	<Page id="pageDocScan" showHeader="false" class="page">
 		<Bar id="barDocScan" class="barHdr">
 			<contentLeft>
@@ -12,7 +14,7 @@
 			<Text id="txtDocScan" text="{i18n>txtDocScan}" class="lblInputSearch"/>
 			<Input id="inDocScan" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginEnd" submit="onDocScanScan" value="{mHUSett>/DOCNO}"/>
 		</VBox>
-		 <Table id="tabDocScan" class="sapUiLargeMarginTop" width="100%" items="{mHUDoc>/}">
+		<Table id="tabDocScan" class="sapUiLargeMarginTop" width="100%" items="{mHUDoc>/}">
 			<columns>
 				<Column id="colDocScanHU">
 					<Text id="colTxtDocScanHU" text="{i18n>colTxtDocScanHU}" class="txtTabColumn"/>
@@ -41,7 +43,7 @@
 			<Bar id="barDocScanFoo">
 				<contentMiddle>
 					<Button id="btnDocScanCng" text="{i18n>btnDocScanCng}" type="Default" width="100%" icon="sap-icon://switch-views" class="btnFoo"/>
-                    <Button id="btnDocScanMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
+					<Button id="btnDocScanMove" text="{i18n>btnDocScanMove}" type="Emphasized" width="100%" enabled="false"/>
 				</contentMiddle>
 			</Bar>
 		</footer>
