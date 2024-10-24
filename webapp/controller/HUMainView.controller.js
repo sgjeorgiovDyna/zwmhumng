@@ -2,9 +2,11 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
-    "sap/m/MessageStrip"
+    "sap/m/MessageStrip",
+    'sap/m/Button',
+    "sap/ui/core/Fragment"
 ],
-    function (Controller, JSONModel, MessageToast, MessageStrip) {
+    function (Controller, JSONModel, MessageToast, MessageStrip, Button, Fragment) {
         "use strict";
 
         return Controller.extend("zmwhumng.controller.HUMainView", {
@@ -139,6 +141,63 @@ sap.ui.define([
             destroyMsgStrip: function (vbox) {
                 let vboxItm = vbox.getItems();
                 if (vboxItm.length > 0) vboxItm[0].destroy();
-            }
+            },
+            onWithdrawnQty: function (oEvent) {
+                let selMat = oEvent.getSource().getParent().getBindingContext("mMatList").getObject();
+                this.setViewModel(selMat, "mWithDrawn");
+                this.withdrawnQty(oEvent);
+            },
+            withdrawnQty: async function (oEvent) {
+                let oView = this.getView();
+
+                if (!this.oDialogWithdrawnQty) {
+                    this.oDialogWithdrawnQty = await Fragment.load({
+                        id: this.getView().getId(),
+                        name: "zmwhumng.view.fragments.dialogs.diaWithdrawnQty",
+                        controller: this
+                    }).then(function (oDialog) {
+                        oView.addDependent(oDialog);
+                        return oDialog;
+                    }.bind(this));
+                }
+
+                if (this.oDialogWithdrawnQty) {
+                    let oButton = this.newBtnCancelDia(this.oDialogWithdrawnQty);
+                    let oButtonSave = this.newBtnSaveDia(this.oDialogWithdrawnQty);
+                    this.oDialogWithdrawnQty.setBeginButton(oButton);
+                    this.oDialogWithdrawnQty.setEndButton(oButtonSave);
+                    this.oDialogWithdrawnQty.open();
+                }
+            },
+            newBtnCancelDia: function (dia) {
+                let btn = new Button({
+                    text: this.getView().getModel("i18n").getResourceBundle().getText("btnCancelDia"),
+                    width: "47%",
+                    press: function () {
+                        this.handleCloseDia(dia);
+                    }.bind(this)
+                });
+
+                btn.addStyleClass("btnFoo");
+                return btn;
+            },
+            newBtnSaveDia: function (dia) {
+                let btn = new Button({
+                    text: this.getView().getModel("i18n").getResourceBundle().getText("btnSaveDia"),
+                    width: "48%",
+                    type: "Emphasized",
+                    press: function () {
+                        this.handleCloseDia(dia);
+                    }.bind(this)
+                });
+
+                btn.addStyleClass("btnSaveFoo")
+                return btn;
+            },
+            handleCloseDia: function (diaObj) {
+                if (diaObj) {
+                    diaObj.close();
+                }
+            },
         });
     });

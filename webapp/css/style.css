@@ -85,3 +85,23 @@
     font-size: 14px  !important;
     color:#2D3748  !important;
 }
+
+/* Dialog withdrawn Qty */
+.txtDiaLabel {
+    font: Inter !important;
+    font-weight: 500 !important;
+    font-size: 12px  !important;
+    color:#2D3748  !important;
+}
+
+.txtDiaVal {
+    font: Inter !important;
+    font-weight: 600 !important;
+    font-size: 14px  !important;
+    color:#2D3748  !important;
+}
+
+.btnSaveFoo span {
+    border-color: #093C70 !important;
+    background: #093C70 !important;
+}

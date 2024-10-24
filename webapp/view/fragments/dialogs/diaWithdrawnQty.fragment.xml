@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:tnt="sap.tnt"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="diaWithdrawnQty" title="{i18n>diaWithdrawnQty}" contentHeight="20%" contentWidth="50%" beforeOpen="onBeforeOpenWithdrawQty" showHeader="false">
+        <content>
+            <VBox id="vboxDiaWithDrawnQty" renderType="Bare" width="93%">
+                <Label id="lblDiaWithDrawnMat" text="{i18n>lblMatHdr}" class="sapUiTinyMargin txtDiaLabel"></Label>
+                <Text id="txtDiaWithDrawnMat" text="{mWithDrawn>/MATNR}" class="sapUiTinyMarginBegin txtDiaVal"></Text>
+                <Label id="lblDiaWithDrawnQty" text="{i18n>lblDiaWithDrawnQty}" class="sapUiTinyMargin txtDiaLabel"></Label>
+                <Input id="inDiaWithdrawnQty" placeholder="{i18n>inDiaWithdrawnQty}" value="{mWithDrawn>/KWMENG}" class="sapUiTinyMarginBeginEnd"></Input>
+            </VBox>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

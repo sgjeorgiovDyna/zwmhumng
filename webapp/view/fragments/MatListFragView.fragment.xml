@@ -75,7 +75,7 @@
 						<Text id="txtMatVal" text="{mMatList>MATNR}" width="25%" class="txtListMatVal"/>
 						<Text id="txtMatDescVal" text="{mMatList>MAKTX}" width="35%" class="txtListMatVal"/>
 						<Text id="txtMatQtyVal" text="{mMatList>KWMENG} {mMatList>/MEINS}" width="25%" class="txtListMatVal"/>
-						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="10%"/>
+						<core:Icon id="iconMoveMat" src="sap-icon://cart" width="10%" press="onWithdrawnQty"/>
 					</HBox>
 					<HBox id="hboxMatHdr1" width="100%" renderType="Bare" class="sapUiTinyMarginTop">
 						<Label id="lblOrd" text="{i18n>lblOrd}" width="25%" class="lblListMatDesc"/>
